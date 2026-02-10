@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container py-5">
+    <a href="/proyectos" class="btn btn-outline-success mb-4">&larr; Volver a la lista</a>
+
+    <div class="row g-5 align-items-center">
+        <div class="col-md-6">
+            <div class="shadow-lg rounded overflow-hidden border border-3 border-success">
+                <img src="<%= proyecto.img %>" alt="<%= proyecto.name %>" class="img-fluid w-100">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold text-success mb-3"><%= proyecto.name %></h1>
+            <span class="badge bg-warning text-dark fs-5 mb-4"><%= proyecto.type %></span>
+            
+            <div class="mb-4">
+                <h3 class="h5 fw-bold text-secondary">¿En qué consiste?</h3>
+                <p class="lead"><%= proyecto.description %></p>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-success fw-bold">♻️ Materiales Usados</h5>
+                            <p class="card-text"><%= proyecto.materials %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">🧠 Habilidades que Desarrolla</h5>
+                            <p class="card-text"><%= proyecto.benefits %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

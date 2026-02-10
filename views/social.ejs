@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container py-5 text-center">
+    <h2 class="mb-4">Impacto Social y Comunidad</h2>
+    
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <p class="lead"><%= impacto %></p>
+            <hr>
+            <p><strong>Objetivo en Redes:</strong> <%= objetivoRedes %></p>
+        </div>
+    </div>
+
+    <h3>Síguenos</h3>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+        <a href="<%= socialLinks.facebook %>" class="btn btn-primary btn-lg">Facebook</a>
+        <a href="<%= socialLinks.instagram %>" class="btn btn-danger btn-lg">Instagram</a>
+        <a href="<%= socialLinks.tiktok %>" class="btn btn-dark btn-lg">TikTok</a>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

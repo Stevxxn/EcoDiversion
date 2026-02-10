@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container py-5">
+    <h2 class="text-center mb-5 text-success fw-bold">Nuestros Proyectos</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% juegos.forEach(function(game) { %>
+            <div class="col">
+                <div class="card h-100 shadow border-success position-relative">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="<%= game.img %>" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="<%= game.name %>">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title fw-bold"><%= game.name %></h5>
+                        <span class="badge bg-secondary mb-3 align-self-center"><%= game.type %></span>
+                        
+                        <a href="/proyectos/<%= game.id %>" class="btn btn-success mt-auto stretched-link">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
