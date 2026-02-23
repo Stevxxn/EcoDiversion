@@ -2,21 +2,27 @@
 <%- include('partials/navbar') %>
 
 <div class="container py-5 text-center">
-    <h2 class="mb-4">Impacto Social y Comunidad</h2>
+    <h2 class="mb-4" data-aos="fade-down">Impacto Social y Comunidad</h2>
     
     <div class="row justify-content-center mb-5">
-        <div class="col-md-8">
-            <p class="lead"><%= impacto %></p>
-            <hr>
-            <p><strong>Objetivo en Redes:</strong> <%= objetivoRedes %></p>
+        <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
+            <p class="lead fs-4 text-muted"><%= impacto %></p>
+            <hr class="my-4">
+            <p class="fs-5"><strong>Objetivo en Redes:</strong> <%= objetivoRedes %></p>
         </div>
     </div>
 
-    <h3>Síguenos</h3>
-    <div class="d-flex justify-content-center gap-3 mt-3">
-        <a href="<%= socialLinks.facebook %>" class="btn btn-primary btn-lg">Facebook</a>
-        <a href="<%= socialLinks.instagram %>" class="btn btn-danger btn-lg">Instagram</a>
-        <a href="<%= socialLinks.tiktok %>" class="btn btn-dark btn-lg">TikTok</a>
+    <h3 data-aos="fade-up" data-aos-delay="400">¡Conéctate con nosotros!</h3>
+    
+    <div class="d-flex justify-content-center gap-4 mt-4" data-aos="zoom-in" data-aos-delay="600">
+        
+        <a href="<%= socialLinks.facebook %>" target="_blank" class="btn btn-primary btn-pulse rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px;">
+            <i class="fab fa-facebook-f fa-2x"></i>
+        </a>
+        
+        <a href="<%= socialLinks.instagram %>" target="_blank" class="btn text-white btn-pulse rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 70px; height: 70px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);">
+            <i class="fab fa-instagram fa-2x"></i>
+        </a>
     </div>
 </div>
 

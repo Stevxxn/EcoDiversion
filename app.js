@@ -40,11 +40,10 @@ app.get('/social', (req, res) => {
     res.render('social', { 
         title: "Impacto Social",
         impacto: "Buscamos que la comunidad pierda la idea de 'basura' y gane oportunidades de aprendizaje interactivo.",
-        objetivoRedes: "Utilizar Facebook, Instagram y TikTok para promover el cambio de hábitos.",
+        objetivoRedes: "Utilizar Facebook e Instagram para promover el cambio de hábitos.",
         socialLinks: {
-            facebook: "https://facebook.com",
-            tiktok: "https://tiktok.com",
-            instagram: "https://instagram.com"
+            facebook: "https://www.facebook.com/share/18WVfYfj8J/?mibextid=wwXIfr",
+            instagram: "https://www.instagram.com/eco._diversion?igsh=YzZwN251MmcydDY4&utm_source=qr"
         }
     });
 });
@@ -53,49 +52,58 @@ app.get('/social', (req, res) => {
 // Información basada en el documento EcoDiversión [cite: 3, 8, 19, 40]
 const proyectosData = [
     {
-        id: "juego-aros", // ID único para la URL
-        name: "Juego de Aros",
+        id: "juego-aros", 
+        name: "Juego de Aros (Ring Toss)",
         type: "Puntería",
-        img: "/img/Juego de Aros.jpg",
-        description: "Un clásico juego de feria recreado con materiales sostenibles. Los participantes deben lanzar aros tratando de encajarlos en las botellas.",
-        benefits: "Mejora la coordinación mano-ojo y la precisión[cite: 8]. Fomenta la paciencia y el control motriz fino.",
-        materials: "Botellas de plástico reutilizadas (rellenas de arena para estabilidad), cartón para la base y aros hechos de mangueras viejas o alambre recubierto."
+        img: "/img/aros.jpeg", // <-- Ruta actualizada con el nuevo nombre
+        description: "Un clásico juego de feria muy colorido. Los participantes deben lanzar aros desde una distancia marcada tratando de encajarlos en los chupetes premiados.",
+        benefits: "Mejora la coordinación mano-ojo, la precisión visual y fomenta el control motriz fino de una manera muy atractiva.",
+        materials: "Cartón reciclado pintado para la base y el letrero de fondo, chupetes reales como objetivos y aros de plástico."
     },
     {
         id: "juego-bolos",
         name: "Juego de Bolos",
-        type: "Destreza",
-        img: "/img/Juego de Bolos.jpg",
-        description: "Una pista de bolos adaptada. Se utilizan botellas decoradas como pinos y una bola hecha de material compacto reciclado.",
-        benefits: "Desarrolla la puntería, la fuerza controlada y la competitividad sana entre compañeros[cite: 64].",
-        materials: "Botellas plásticas de igual tamaño, pintura ecológica, papel periódico para rellenar la bola y cartón para delimitar la pista."
-    },
-    {
-        id: "bota-pato",
-        name: "Juego de Bota al Pato",
-        type: "Puntería",
-        img: "/img/Juego de Bota al Pato.jpg",
-        description: "El objetivo es derribar figuras (patos u otros diseños) lanzando una pelota desde una distancia marcada.",
-        benefits: "Estimula la concentración y el cálculo de distancia/fuerza. Perfecto para liberar estrés de forma divertida[cite: 61].",
-        materials: "Madera de palets para la estructura, latas o recortes de plástico para las figuras y bisagras reutilizadas."
+        type: "Destreza y Lógica",
+        img: "/img/bolos.jpeg", // <-- Ruta actualizada
+        description: "Una pista de bolos muy original. Los pinos están diseñados y ensamblados con cartón corrugado y cada uno tiene un valor numérico para sumar puntos al derribarlos.",
+        benefits: "Desarrolla la puntería, la fuerza controlada y ayuda a practicar matemáticas básicas al tener que sumar los puntos obtenidos.",
+        materials: "Cartón corrugado reciclado para dar volumen a los pinos, papel de colores para las etiquetas numéricas y marcadores para los detalles decorativos."
     },
     {
         id: "juego-dardos",
-        name: "Juego de Dardos",
+        name: "Juego de Dardos y Globos",
         type: "Puntería",
-        img: "/img/Juego de Dardos.jpg",
-        description: "Un panel con globos o dianas pintadas donde los participantes ponen a prueba su puntería.",
-        benefits: "Alta exigencia de enfoque visual y precisión. Ayuda a desarrollar la disciplina y la constancia.",
-        materials: "Tablero de corcho o madera recuperada, globos biodegradables y dardos con puntas seguras."
+        img: "/img/dardos.jpeg", // <-- Ruta actualizada
+        description: "¡Pon a prueba tu puntería reventando globos! Un colorido panel forrado donde los participantes lanzan dardos para intentar dar en el blanco y hacer estallar los globos.",
+        benefits: "Exige un alto nivel de enfoque visual, cálculo de la fuerza y precisión. Ayuda a desarrollar la concentración y la coordinación mano-ojo.",
+        materials: "Un tablero de base forrado con papel decorativo reutilizado, globos biodegradables de colores, un vasito de cartón y dardos con punta."
     },
     {
-        id: "juego-memoria",
-        name: "Juego de Memoria",
+        id: "mini-golf",
+        name: "Mini Golf de Cartón",
+        type: "Destreza",
+        img: "/img/golfin.jpeg", // <-- Ruta actualizada
+        description: "¡Demuestra tu precisión en este divertido circuito! Los jugadores deben golpear la pelota intentando hacerla entrar en los diferentes agujeros de la caja, cada uno con una puntuación distinta.",
+        benefits: "Fomenta la concentración, el control de la fuerza y la coordinación ojo-mano. También es excelente para practicar matemáticas rápidas al sumar los puntos.",
+        materials: "Una caja de cartón grande reutilizada, papel decorativo de rayas, cartulina de colores para enmarcar las entradas, pelotas y un palo de golf."
+    },
+    {
+        id: "bota-pato",
+        name: "Bota al Pato (Duck Hunt)",
+        type: "Puntería",
+        img: "/img/pato-splash.jpeg", // <-- Ruta actualizada
+        description: "¡Afina tu puntería y derriba los patos! Un stand de tiro clásico donde los participantes deben lanzar pequeñas pelotas para golpear el centro de los patitos ubicados en las repisas.",
+        benefits: "Excelente para trabajar la coordinación motriz, la precisión de lanzamiento y el enfoque visual en un entorno de pura diversión.",
+        materials: "Estructura de madera o cartón grueso reciclado, pintura ecológica para el decorado de fondo, figuras de patos recortadas y pelotas suaves."
+    },
+    {
+        id: "juego-tetris",
+        name: "Tetris Ecológico",
         type: "Lógica",
-        img: "/img/Juego de Memoria.jpg",
-        description: "Un tablero gigante con tarjetas ocultas que deben ser emparejadas. Ideal para ejercitar la mente.",
-        benefits: "Fortalece la memoria a corto plazo, la lógica y la agilidad mental.",
-        materials: "Cuadrados de cartón resistente, impresiones de figuras ecológicas y tapas de botellas para el agarre."
+        img: "/img/tetris.jpeg", // <-- Ruta de tu nueva imagen
+        description: "Un rompecabezas al estilo Tetris creado completamente con materiales reciclados. Los jugadores deben encajar las diferentes piezas de colores para completar el tablero perfecto sin dejar huecos.",
+        benefits: "Estimula fuertemente el razonamiento espacial, la resolución de problemas y la agilidad mental. Es una forma táctil y divertida de practicar la lógica geométrica.",
+        materials: "Cubetas de cartón de huevos recicladas (recortadas en las clásicas formas geométricas del Tetris) y pintura ecológica de colores vibrantes."
     }
 ];
 

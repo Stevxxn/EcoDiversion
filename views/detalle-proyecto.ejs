@@ -1,17 +1,19 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %>
 
-<div class="container py-5">
-    <a href="/proyectos" class="btn btn-outline-success mb-4">&larr; Volver a la lista</a>
+<div class="container py-5 overflow-hidden">
+    <div data-aos="fade-right">
+        <a href="/proyectos" class="btn btn-outline-success mb-4">&larr; Volver a la galería</a>
+    </div>
 
     <div class="row g-5 align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="zoom-in-right" data-aos-delay="100">
             <div class="shadow-lg rounded overflow-hidden border border-3 border-success">
                 <img src="<%= proyecto.img %>" alt="<%= proyecto.name %>" class="img-fluid w-100">
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
             <h1 class="display-4 fw-bold text-success mb-3"><%= proyecto.name %></h1>
             <span class="badge bg-warning text-dark fs-5 mb-4"><%= proyecto.type %></span>
             
@@ -20,19 +22,19 @@
                 <p class="lead"><%= proyecto.description %></p>
             </div>
 
-            <div class="row">
-                <div class="col-12 mb-3">
-                    <div class="card bg-light border-0 h-100">
+            <div class="row g-3">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card bg-light border-0 shadow-sm h-100">
                         <div class="card-body">
-                            <h5 class="card-title text-success fw-bold">♻️ Materiales Usados</h5>
+                            <h5 class="card-title text-success fw-bold"><i class="fas fa-recycle me-2"></i>Materiales Usados</h5>
                             <p class="card-text"><%= proyecto.materials %></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="card bg-light border-0 h-100">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card bg-light border-0 shadow-sm h-100">
                         <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">🧠 Habilidades que Desarrolla</h5>
+                            <h5 class="card-title text-primary fw-bold"><i class="fas fa-brain me-2"></i>Habilidades que Desarrolla</h5>
                             <p class="card-text"><%= proyecto.benefits %></p>
                         </div>
                     </div>

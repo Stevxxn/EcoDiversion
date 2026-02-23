@@ -2,10 +2,11 @@
 <%- include('partials/navbar') %>
 
 <div class="container py-5">
-    <h2 class="text-center mb-5 text-success fw-bold">Nuestros Proyectos</h2>
+    <h2 class="text-center mb-5 text-success fw-bold" data-aos="fade-down">Nuestros Proyectos</h2>
+    
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <% juegos.forEach(function(game) { %>
-            <div class="col">
+        <% juegos.forEach(function(game, index) { %>
+            <div class="col" data-aos="fade-up" data-aos-delay="<%= index * 150 %>">
                 <div class="card h-100 shadow border-success position-relative">
                     <div style="height: 250px; overflow: hidden;">
                         <img src="<%= game.img %>" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="<%= game.name %>">

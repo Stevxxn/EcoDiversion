@@ -1,19 +1,21 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %>
 
-<div class="container py-5">
-    <h2 class="text-success border-bottom pb-2">Sobre Nosotros</h2>
+<div class="container py-5 overflow-hidden">
+    <h2 class="text-success border-bottom pb-2" data-aos="fade-down">Sobre Nosotros</h2>
+    
     <div class="row mt-4">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
             <h3>Nuestra Misión</h3>
             <p><%= mision %></p>
-            <h3>Nuestra Visión</h3>
+            <h3 class="mt-4">Nuestra Visión</h3>
             <p><%= vision %></p>
         </div>
-        <div class="col-md-6">
-            <div class="alert alert-info">
-                <h4>Antecedentes</h4>
-                <p><%= antecedentes %></p>
+        
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="alert alert-info shadow-sm h-100">
+                <h4 class="alert-heading fw-bold">Antecedentes</h4>
+                <p class="mb-0"><%= antecedentes %></p>
             </div>
         </div>
     </div>

@@ -130,3 +130,52 @@ footer a.btn {
     border-radius: 50px; /* Botones redondos para redes sociales */
     width: 100px;
 }
+
+/* Animación suave para el logo del inicio */
+.bounce-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Animación para las tarjetas de proyectos */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Sube la tarjeta 10 píxeles */
+    box-shadow: 0 15px 25px rgba(46, 125, 50, 0.2) !important; /* Sombra verde ecológica */
+}
+
+/* Animación de latido para cualquier botón con la clase .btn-pulse */
+footer .btn:hover, .btn-pulse:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Aparición suave general */
+.fade-in {
+    animation: fadeInBottom 0.8s ease-out forwards;
+    opacity: 0; /* Empieza invisible */
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Empieza un poco más abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
