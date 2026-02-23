@@ -1,4 +1,5 @@
 const express = require('express');
+const QRCode = require('qrcode'); // <--- Agregamos esta línea
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -129,6 +130,33 @@ app.get('/proyectos/:id', (req, res) => {
     } else {
         res.status(404).send("Proyecto no encontrado :( ");
     }
+});
+
+// --- RUTA PARA GENERAR EL QR CON LOGO ---
+app.get('/codigo-qr', (req, res) => {
+    // 1. Pon aquí tu URL real de Render (ej: https://ecodiversion.onrender.com)
+    const urlDeTuPagina = 'https://ecodiversion.onrender.com/'; 
+    
+    // 2. Esta es la ruta pública de tu logo una vez subido a la nube
+    const urlDeTuLogo = `${urlDeTuPagina}/img/logo.png`; 
+
+    // 3. Usamos la API de QuickChart para generar el QR dinámico con el logo en medio
+    const qrApiUrl = `https://quickchart.io/qr?text=${encodeURIComponent(urlDeTuPagina)}&centerImageUrl=${encodeURIComponent(urlDeTuLogo)}&size=400&margin=2`;
+
+    // 4. Enviamos la vista al navegador
+    res.send(`
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f8e9;">
+            <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 25px rgba(46, 125, 50, 0.2); text-align: center;">
+                <h1 style="color: #2e7d32; font-weight: bold; margin-bottom: 20px;">¡Escanea para jugar!</h1>
+                
+                <img src="${qrApiUrl}" alt="QR EcoDiversión con Logo" style="width: 300px; height: 300px; border: 4px solid #81c784; border-radius: 15px; padding: 10px;">
+                
+                <br><br>
+                <p style="color: #666; font-size: 1.1rem;">Únete a nuestra feria de reciclaje interactivo.</p>
+                <a href="/" style="display: inline-block; margin-top: 15px; text-decoration: none; color: white; background: #2e7d32; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s;">&larr; Volver al inicio</a>
+            </div>
+        </div>
+    `);
 });
 
 app.listen(port, () => {
